@@ -10,7 +10,7 @@
             "cwd": "${workspaceFolder}",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
-            "preLaunchTask": "build-if-needed"
+            "preLaunchTask": "pre-launch-tasks"
         }
     ]
 }

@@ -4,10 +4,42 @@
         {
             "label": "build-if-needed",
             "type": "shell",
-            "command": "if [ ! -d '.next' ] || [ -z \"$(ls -A '.next')\" ]; then npm run build; fi",
-            "windows": {
-                "command": "if not exist .next\\NUL (npm run build) else if not exist .next\\* (npm run build)"
+            "command": "npm",
+            "args": ["run", "build"],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": ["$tsc"],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
             }
+        },
+        {
+            "label": "npm-lint",
+            "type": "npm",
+            "script": "lint",
+            "problemMatcher": ["$eslint-stylish"],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "pre-launch-tasks",
+            "dependsOn": ["build-if-needed", "npm-lint"],
+            "dependsOrder": "sequence",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": []
         }
     ]
 }
