@@ -2,9 +2,10 @@ import React from 'react';
 
 export default function AboutPage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1 className="text-4xl font-bold">About Us</h1>
-      <p>This is the about page of our Next.js application.</p>
+    <main className="flex min-h-screen items-center justify-center p-4">
+      <p className="text-center max-w-md">
+        Soon to be an AI application. Work in progress.
+      </p>
     </main>
   );
 }

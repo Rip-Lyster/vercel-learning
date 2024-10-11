@@ -36,6 +36,9 @@ export default function RootLayout({
       >
         <Navigation />
         {children}
+        <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
+          <a href="https://riplyster.com">riplyster.com</a>
+        </footer>
       </body>
     </html>
   );
