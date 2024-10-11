@@ -1,0 +1,13 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build-if-needed",
+            "type": "shell",
+            "command": "if [ ! -d '.next' ] || [ -z \"$(ls -A '.next')\" ]; then npm run build; fi",
+            "windows": {
+                "command": "if not exist .next\\NUL (npm run build) else if not exist .next\\* (npm run build)"
+            }
+        }
+    ]
+}
